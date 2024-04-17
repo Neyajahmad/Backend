@@ -1,11 +1,12 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
+require('dotenv').config(); 
 
 const app = express();
 const http = require('http').createServer(app);
 const PORT = process.env.PORT || 3000;
 
-const mongoURI = 'mongodb+srv://sohaib:SOHAIB@cluster0.9n80xku.mongodb.net/sohaib?retryWrites=true&ssl=true'
+const mongoURI = process.env.MONGO_URI; 
 
 const client = new MongoClient(mongoURI);
 
